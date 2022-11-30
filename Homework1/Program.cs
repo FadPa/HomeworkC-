@@ -66,16 +66,25 @@ else
 // 8 -> 2, 4, 6, 8
 
 Console.Clear();
-Console.Write("Введите целое число: ");
+Console.Write("Введите целое положительное число: ");
 int n = Convert.ToInt32(Console.ReadLine());
 
 int current = 1;
 
-while(current <= n)
+if(n > 0)
 {
-    if(current % 2 == 0)
-    {
-        Console.Write(current + " ");
+    
+
+    while(current <= n)
+    {   
+        if(current % 2 == 0)
+        {
+            Console.Write(current + " ");
+        }
+        current++;
     }
-    current++;
+}
+else
+{
+    Console.Write("Вы ввели отрицательное число!");
 }
