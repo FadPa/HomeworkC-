@@ -36,7 +36,7 @@ else
 */
 
 // Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
-
+/*
 int SumNumber(int num)
 {
     int sum = 0;
@@ -54,3 +54,42 @@ int a = Convert.ToInt32(Console.ReadLine());
 
 int result = SumNumber(a);
 Console.WriteLine(result);
+*/
+
+// Задача 29: Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
+
+// 1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
+// 6, 1, 33 -> [6, 1, 33]
+
+int[] CreateArray(int size)
+{
+    int[] array =new int[size];
+
+    for(int i = 0; i < size;  i++)
+    {
+        Console.Write($"Введите {i+1} элемент массива: ");
+        array[i] =Convert.ToInt32(Console.ReadLine()); 
+    }
+    return array;
+}
+
+void ShowArray(int[] array) 
+{
+    for(int i =0; i < array.Length; i++)
+    {
+        Console.Write(array[i]+ " ");
+        // Console.WriteLine($"{i+1} элемент {array[i]}");
+    }
+}
+
+Console.Write("Ведите количество элементов массива: ");
+int Length = Convert.ToInt32(Console.ReadLine());
+if (Length > 0)
+{
+    int[] myArray = CreateRandomArray(Length);
+    ShowArray(myArray);
+}
+else
+{
+    Console.WriteLine("Количество элементов массива не может быть отрицательным.");
+}
