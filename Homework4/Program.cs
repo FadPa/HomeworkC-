@@ -1,8 +1,5 @@
 ﻿// Задача 25: Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
-
-// 3, 5 -> 243 (3⁵)
-// 2, 4 -> 16
-
+/*
 int NamberInPower(int num1, int num2)
 {
     int res = num1;
@@ -20,6 +17,7 @@ int NamberInPower(int num1, int num2)
     return res;
 }
 
+Console.Clear();
 Console.Write("Введите число: ");
 int num = Convert.ToInt32(Console.ReadLine());
 Console.Write("ВВедите степень числа: ");
@@ -35,3 +33,24 @@ else
 {
     Console.WriteLine($"Число {num} в степени {deg} равняется {numpow}");
 }
+*/
+
+// Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+
+int SumNumber(int num)
+{
+    int sum = 0;
+    if(num < 0) num = num * (-1);
+    for(int count = num; count > 0; count /=10)
+    {
+        sum=sum + count % 10;
+    }
+    return sum;
+}
+
+Console.Clear();
+Console.Write ("Input number: ");
+int a = Convert.ToInt32(Console.ReadLine());
+
+int result = SumNumber(a);
+Console.WriteLine(result);
