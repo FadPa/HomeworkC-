@@ -86,7 +86,7 @@ Console.Write("Ведите количество элементов массив
 int Length = Convert.ToInt32(Console.ReadLine());
 if (Length > 0)
 {
-    int[] myArray = CreateRandomArray(Length);
+    int[] myArray = CreateArray(Length);
     ShowArray(myArray);
 }
 else
