@@ -102,6 +102,8 @@ SearchingForValueByIndexes(myArray, num1, num2);
 
 // Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
 
+
+
 int[,] CreateRandom2dArray()
 {
     Console.Write("Input a number of rows: ");
