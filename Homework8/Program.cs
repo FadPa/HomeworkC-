@@ -228,8 +228,7 @@ Show2dArray(res);
 */
 
 // Задача 60. ...Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
-
-
+/*
 int[,,] CreateRandom3DArray(int x, int y, int z)
 {
     int[,,] array = new int[x, y, z];
@@ -275,3 +274,56 @@ int z = Convert.ToInt32(Console.ReadLine());
 
 int[,,] my3DArray = CreateRandom3DArray(x, y, z);
 Show3dArray(my3DArray);
+*/
+
+// Задача 62. Напишите программу, которая заполнит спирально массив 4 на 4.
+
+
+int[,] CreateRandom2dArray(int s)
+{
+
+    int[,] array = new int[s, s];
+    int temp = 1;
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for(int j = 0; j < array.GetLength(1); j++)
+        {
+            while (temp <= array.GetLength(0) * array.GetLength(1))
+            { 
+                array[i, j] = temp;
+                temp++;
+                if (i <= j + 1 && i + j < array.GetLength(1) - 1) j++;
+
+                else if (i < j && i + j >= array.GetLength(0) - 1) i++;
+
+                else if (i >= j && i + j > array.GetLength(1) - 1) j--;
+
+                else i--;
+            }       
+        
+        
+        }    
+    }
+    return array;
+}
+
+void Show2dArray(int[,] array)
+{
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for(int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(array[i,j] + "\t");
+        }
+        Console.WriteLine();
+    }
+    Console.WriteLine();
+}
+
+Console.Clear();
+Console.Write("Введите размерность матрицы: ");
+int size = Convert.ToInt32(Console.ReadLine());
+
+
+int[,] myArray = CreateRandom2dArray(size);
+Show2dArray(myArray);
