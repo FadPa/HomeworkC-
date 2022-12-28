@@ -132,7 +132,7 @@ MinString(myArray);
 */
 
 // Задача 58: Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
-
+/*
 int[,] CreateRandom2dArray1()
 {
     Console.Write("Input a number of rows fist array: ");
@@ -225,3 +225,53 @@ int[,] mySecondArray = CreateRandom2dArray2();
 Show2dArray(mySecondArray);
 int[,] res =ProductOfArrays(myArray, mySecondArray);
 Show2dArray(res);
+*/
+
+// Задача 60. ...Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
+
+
+int[,,] CreateRandom3DArray(int x, int y, int z)
+{
+    int[,,] array = new int[x, y, z];
+
+    for(int i = 0; i < x; i++)
+    {
+        for(int j= 0; j < y; j++)
+        {
+            for(int k = 0; k < z; k++)
+            {
+                array[i, j, k] = new Random().Next(10, 100);
+            }
+        }
+    }
+    return array;
+}
+
+void Show3dArray(int[,,] array)
+{
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for(int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write($"X({i}) Y({j}) ");
+            for(int k = 0; k < array.GetLength(2); k++)
+            {
+                Console.Write( $"Z({k})={array[i,j,k]}; ");
+            }
+        }
+        Console.WriteLine();
+    }
+    Console.WriteLine();
+}
+
+Console.Clear();
+Console.WriteLine("Введите расзмерность трехмерного массива:");
+Console.Write("Введите x: ");
+int x = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите y: ");
+int y = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите z: ");
+int z = Convert.ToInt32(Console.ReadLine());
+
+int[,,] my3DArray = CreateRandom3DArray(x, y, z);
+Show3dArray(my3DArray);
